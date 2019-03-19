@@ -14,7 +14,7 @@ import { OrdersFormComponent } from './orders/orders-form/orders-form.component'
     OrdersFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule // другие модули
   ],
   // то что будет в контексте
   providers: [
