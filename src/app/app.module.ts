@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { OrdersListComponent } from './orders/orders-list/orders-list.component';
 import {OrdersService} from './orders/ordersservice';
 import {OrdersServiceMimics} from './orders/orders-mimics.service';
+import { OrdersFormComponent } from './orders/orders-form/orders-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrdersListComponent
+    OrdersListComponent,
+    OrdersFormComponent
   ],
   imports: [
     BrowserModule
