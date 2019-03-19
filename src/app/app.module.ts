@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { OrdersListComponent } from './orders/orders-list/orders-list.component';
 import {OrdersService} from './orders/ordersservice';
-import {OrdersServiceMimix} from './orders/orders-mimix.service';
+import {OrdersServiceMimics} from './orders/orders-mimics.service';
 
 @NgModule({
   declarations: [
@@ -14,8 +14,9 @@ import {OrdersServiceMimix} from './orders/orders-mimix.service';
   imports: [
     BrowserModule
   ],
+  // то что будет в контексте
   providers: [
-    {provide: OrdersService, useClass: OrdersServiceMimix}
+    {provide: OrdersService, useClass: OrdersServiceMimics}
   ],
   bootstrap: [AppComponent]
 })
