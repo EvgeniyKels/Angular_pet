@@ -1,0 +1,7 @@
+.btn {
+  background-color: #cccccc;
+}
+.active {
+  background-color: bisque;
+  color: white;
+}

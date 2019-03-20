@@ -1,0 +1,32 @@
+<div [hidden] = "getOrders().length > 0">
+  <h1>No Orders</h1>
+</div>
+<div [hidden] = "getOrders().length == 0">
+  <h1>List Orders</h1>
+</div>
+
+<div>
+  <ul class="list-group">
+    <!--orders - list - компонента-->
+    <!--bunding between HTML and TS-->
+    <!--директива For - размножение элементов-->
+    <!--* означает что это модификация HTML-->
+    <!--в модуль контекст помещаются ссылки на наши сервисы-->
+    <!--индекс - зарезервированное слово-->
+    <li class="list-group-item" *ngFor="let order of getOrders(); index as i; even as even" [class.even]="even" >
+      {{order}}
+      <button class="btn btn-danger" (click)="remove(i)">
+        Remove
+      </button>
+    </li>
+  </ul>
+</div>
+<!--div.GORO#1>ul>li-->
+<!--input.form-control-->
+<!--onInput - функция в компоненте-->
+
+<!--<input type="text" class="form-control" (keyup.enter)="onInput($event)">-->
+
+<!--app - модуль-->
+<!--можно было бы делать отдельные модули и пихать его в <главны> модуль</главны>-->
+<!--As a workaround, try changing Typescript version to Bundled in Settings | Languages & Frameworks | TypeScript, or disable Angular language service there-->

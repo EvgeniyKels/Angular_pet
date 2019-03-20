@@ -1,0 +1,13 @@
+<div class="main_like">
+  <span class="num">
+    {{numbers}}
+  </span>
+  <a href="#" class="material-icons like" (click)="changePic()">
+    {{like}}
+  </a>
+</div>
+
+<div class="main_input">
+  <input type="text" class="form-group" [(ngModel)]="inputText"><br>
+  {{inputText|pipetitle}}
+</div>
