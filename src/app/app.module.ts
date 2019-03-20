@@ -10,6 +10,8 @@ import { LoremPixelComponent } from './orders/lorem/lorem-pixel/lorem-pixel.comp
 import { FormsModule } from '@angular/forms';
 import { SyncInputComponent } from './sync-input/sync-input.component';
 import { SummaryPipe } from './summary.pipe';
+import { LikeComponent } from './like/like.component';
+import { PipetitlePipe } from './pipetitle.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SummaryPipe } from './summary.pipe';
     OrdersFormComponent,
     LoremPixelComponent,
     SyncInputComponent,
-    SummaryPipe
+    SummaryPipe,
+    LikeComponent,
+    PipetitlePipe
   ],
   imports: [
     BrowserModule,
