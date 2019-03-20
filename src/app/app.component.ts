@@ -13,9 +13,5 @@ export class AppComponent {
   // tuggleActive() {
   //   this.isActive = !this.isActive;
   // }
-  text = 'quququ';
 
-  onClick_() {
-    alert(this.text);
-  }
 }

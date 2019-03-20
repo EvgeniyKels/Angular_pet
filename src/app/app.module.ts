@@ -8,13 +8,15 @@ import { OrdersServiceMimics } from './orders/orders-mimics.service';
 import { OrdersFormComponent } from './orders/orders-form/orders-form.component';
 import { LoremPixelComponent } from './orders/lorem/lorem-pixel/lorem-pixel.component';
 import { FormsModule } from '@angular/forms';
+import { SyncInputComponent } from './sync-input/sync-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrdersListComponent,
     OrdersFormComponent,
-    LoremPixelComponent
+    LoremPixelComponent,
+    SyncInputComponent
   ],
   imports: [
     BrowserModule,
