@@ -6,13 +6,16 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ANGULAR';
+  // title = 'ANGULAR';
   // urlImage = 'http://lorempixel.com/500/500/cats';
   // urlImage;
   // isActive = false;
-
   // tuggleActive() {
   //   this.isActive = !this.isActive;
   // }
+  text = 'quququ';
 
+  onClick_() {
+    alert(this.text);
+  }
 }
