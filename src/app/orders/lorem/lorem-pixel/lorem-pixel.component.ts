@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-lorem-pixel',
@@ -16,20 +16,27 @@ export class LoremPixelComponent {
   //     this.isActive = false;
   //     }, 100);
   // }
-  private width = 500;
-  private height = 500;
-  private category = 'cats';
+
+  @Input() public width = 500;
+  @Input() height = 500;
+  @Input() category = 'cats';
+  @Output() change = new EventEmitter(); // некое событие. Происходит событие change;
   private toggle = false;
-  private urlImage = `http://lorempixel.com/${this.width}/${this.height}/${this.category}`;
+  private urlImage = `http://lorempixel.com/`;
+  private categories = ['abstract', 'people', 'sports', 'cats', 'animals', 'fashion', 'nightlive'];
+  index = 0;
 
   pushbutton() {
-    if (this.toggle) {
-      this.urlImage += ' ';
-    } else {
-      this.urlImage = this.urlImage.trim();
+    this.index ++;
+    if (this.index === this.categories.length) {
+      this.index = 0;
     }
-    this.toggle = !this.toggle;
+    this.category = this.categories[this.index];
+    this.change.emit(this.category);
   }
 
+  getUrl() {
+    return this.urlImage  = `http://lorempixel.com/${this.width}/${this.height}/${this.category}`;
+  }
 }
 

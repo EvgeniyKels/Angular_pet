@@ -1,12 +1,12 @@
 a {
   text-decoration: none;
-  font-size: 50px;
-  color: red;
+  /*font-size: 50px;*/
+  color: cadetblue;
 }
 .num {
-  margin: 25px;
+  /*margin: 25px;*/
   text-decoration-color: green;
-  font-size: 50px;
+  /*font-size: 50px;*/
 }
 .like {
   margin: 25px;

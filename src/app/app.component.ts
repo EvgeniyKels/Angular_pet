@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private category: any;
   // title = 'ANGULAR';
   // urlImage = 'http://lorempixel.com/500/500/cats';
   // urlImage;
@@ -13,5 +14,14 @@ export class AppComponent {
   // tuggleActive() {
   //   this.isActive = !this.isActive;
   // }
+  @Input() likefromApp;
 
+  onChange(category) {
+    this.category = category;
+  }
+
+  onChangeLikes(likes) {
+    this.likefromApp = likes;
+    console.log(this.likefromApp);
+  }
 }

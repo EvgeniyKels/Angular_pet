@@ -12,6 +12,10 @@ import { SyncInputComponent } from './sync-input/sync-input.component';
 import { SummaryPipe } from './summary.pipe';
 import { LikeComponent } from './like/like.component';
 import { PipetitlePipe } from './pipetitle.pipe';
+import { TweeeetComponent } from './tweeeet/tweeeet.component';
+import { HeaderBodyComponent } from './header-body/header-body.component';
+import { CoffeeOrderComponent } from './coffee/coffee-order-form/coffee-order.component';
+import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/coffee-order-pendorder.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { PipetitlePipe } from './pipetitle.pipe';
     SyncInputComponent,
     SummaryPipe,
     LikeComponent,
-    PipetitlePipe
+    PipetitlePipe,
+    TweeeetComponent,
+    HeaderBodyComponent,
+    CoffeeOrderComponent,
+    CoffeeOrderPendorderComponent
   ],
   imports: [
     BrowserModule,

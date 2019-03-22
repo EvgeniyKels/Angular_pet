@@ -1,7 +1,9 @@
 <div>
-  <img [src]="urlImage" alt="тут картинка">
+  <img [src]=getUrl() alt="тут картинка">
 </div>
 <br>
 <div>
-  <button class="btn" [class.active]="isActive" (click)="pushbutton()">Push</button>
+  <button class="btn" [class.active]="isActive" (click)="pushbutton()">ChangeButton</button>
+  <br>
+  {{category}}
 </div>

@@ -5,20 +5,13 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class PipetitlePipe implements PipeTransform {
   private arr = ['of', 'the', 'a'];
-  private strArr = [];
-  private str;
 
-  // pipe title - все слова кроме [of, the, a] преобразует в первую загланую
   transform(inputString: string, args?: any): string {
-    if (inputString !== '') {
-      this.strArr.push(inputString);
+    if (!inputString) {
       return;
     }
-    this.str = this.strArr.join();
-    if (this.arr.includes(this.str)) {
-      this.str.charAt(0).toUpperCase();
-    }
-    this.strArr = [];
-    return this.str;
+    return inputString.toLowerCase().split(/[^a-zA-Z]+/)
+      .map(o => this.arr.indexOf(o) === -1 ? o.substring(0, 1).toUpperCase() +
+      o.substring(1) : o).join(' ');
   }
 }

@@ -16,6 +16,4 @@ export class OrdersFormComponent {
     this.service.addOrder(event.target.value);
     event.target.value = '';
   }
-
-
 }
