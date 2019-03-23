@@ -1,0 +1,19 @@
+<!--<div class="card">-->
+  <!--<h4 class="card-header">{{tweet.title}}</h4>-->
+  <!--<div class="card-body">-->
+    <!--<span>{{tweet.body}}</span>-->
+    <!--<app-like [likesCount]="tweet.likes" (changeinc)="onChange($event)"></app-like>-->
+    <!--<span>{{tweet.likes}}</span>-->
+  <!--</div>-->
+<!--</div>-->
+
+<app-header-body>
+  <div class="header">
+    {{tweet.title}}
+  </div>
+  <div class="body">
+    <span>{{tweet.body}}</span>
+    <app-like [likesCount]="tweet.likes" (changeinc)="onChange($event)"></app-like>
+    <span>{{tweet.likes}}</span>
+  </div>
+</app-header-body>
