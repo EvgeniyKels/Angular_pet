@@ -1,8 +1,18 @@
-<div [hidden] = "getOrders().length > 0">
-  <h1>No Orders</h1>
-</div>
-<div [hidden] = "getOrders().length == 0">
-  <h1>List Orders</h1>
+<!--<div [hidden] = "getOrders().length > 0">-->
+  <!--<h1>No Orders</h1>-->
+<!--</div>-->
+<!--<div [hidden] = "getOrders().length == 0">-->
+  <!--<h1>List Orders</h1>-->
+<!--</div>-->
+
+<ng-template #orders>
+  Pending Orders
+</ng-template>
+<ng-template #no_orders>
+  No Orders
+</ng-template>
+<div *ngIf="getOrders().length>0 then orders else no_orders">
+
 </div>
 
 <div>

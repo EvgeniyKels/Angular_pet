@@ -11,9 +11,10 @@
   <div class="header">
     {{tweet.title}}
   </div>
-  <div class="body">
+  <!--вместо дива лучшн использовать ng-content-->
+  <ng-container class="body">
     <span>{{tweet.body}}</span>
     <app-like [likesCount]="tweet.likes" (changeinc)="onChange($event)"></app-like>
     <span>{{tweet.likes}}</span>
-  </div>
+  </ng-container>
 </app-header-body>
