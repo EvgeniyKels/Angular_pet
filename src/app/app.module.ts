@@ -16,6 +16,7 @@ import { TweeeetComponent } from './tweeeet/tweeeet.component';
 import { HeaderBodyComponent } from './header-body/header-body.component';
 import { CoffeeOrderComponent } from './coffee/coffee-order-form/coffee-order.component';
 import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/coffee-order-pendorder.component';
+import { NavigatorViewComponent } from './navigator-view/navigator-view.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/c
     TweeeetComponent,
     HeaderBodyComponent,
     CoffeeOrderComponent,
-    CoffeeOrderPendorderComponent
+    CoffeeOrderPendorderComponent,
+    NavigatorViewComponent
   ],
   imports: [
     BrowserModule,
