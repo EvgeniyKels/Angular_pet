@@ -17,6 +17,7 @@ import { HeaderBodyComponent } from './header-body/header-body.component';
 import { CoffeeOrderComponent } from './coffee/coffee-order-form/coffee-order.component';
 import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/coffee-order-pendorder.component';
 import { NavigatorViewComponent } from './navigator-view/navigator-view.component';
+import { LoginComponent } from './login/login.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NavigatorViewComponent } from './navigator-view/navigator-view.componen
     HeaderBodyComponent,
     CoffeeOrderComponent,
     CoffeeOrderPendorderComponent,
-    NavigatorViewComponent
+    NavigatorViewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
