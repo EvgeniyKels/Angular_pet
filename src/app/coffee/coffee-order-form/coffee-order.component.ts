@@ -12,6 +12,10 @@ export class CoffeeOrderComponent {
     this.service = service;
   }
   onSubmit(form) {
+    if (form.value.email === null) {
+      form.reset();
+      return;
+    }
     this.service.addOrder(form.value);
     form.reset();
   }

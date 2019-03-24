@@ -3,7 +3,7 @@
   <div>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let order of getOrders()">
-        <input type="checkbox">
+        <input type="checkbox" (click)="deleteOrder(order)">
         {{order}}
       </li>
     </ul>

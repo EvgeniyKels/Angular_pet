@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {OrdersService} from '../../orders/ordersservice';
 
 @Component({
@@ -17,5 +17,10 @@ export class CoffeeOrderPendorderComponent {
     return this.service.getOrders().map((el) => {
       return Object.values(el).join(' ');
     });
+  }
+
+  deleteOrder(order: string) {
+    const arr = order.split(/\s/);
+    this.service.remove(arr[1]);
   }
 }

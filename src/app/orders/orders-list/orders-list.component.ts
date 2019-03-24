@@ -25,7 +25,7 @@ export class OrdersListComponent {
     $event.target.value = ' ';
   }
 
-  remove(i: number) {
-    this.service.remove(i);
-  }
+  // remove(i: number) {
+  //   this.service.remove(i);
+  // }
 }

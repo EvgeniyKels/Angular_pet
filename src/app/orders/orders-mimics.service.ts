@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {OrdersService} from './ordersservice';;
+import {OrdersService} from './ordersservice';
 
 @Injectable({
   providedIn: 'root'
@@ -24,12 +24,12 @@ export class OrdersServiceMimics extends OrdersService {
     return Object.values(this.orders);
   }
 
-  remove(id: number): boolean {
-    // if (id < 0 || id >= this.orders.length) {
-    //   return false;
-    // }
-    // this.orders.splice(id, 1);
-    return true;
+  remove(email: string): boolean {
+    if (this.orders[email]) {
+      return delete this.orders[email];
+    } else {
+      return false;
+    }
   }
 }
 
