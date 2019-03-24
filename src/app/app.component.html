@@ -9,21 +9,36 @@
 <!--</div>-->
 
 <h1>Orders Applicatoin</h1>
+<app-navigator-view tab1Name="Add Order" tab2Name="Pending Orders" tab3Name="Login" tab4Name="Sign_UP">
+  dsadsad
+  <ng-container class="c1">
+    <app-orders-form></app-orders-form>
+  </ng-container>
+  <ng-container class="c2">
+    <app-coffee-order-pendorder></app-coffee-order-pendorder>
+  </ng-container>
+  <ng-container class="c3">
+    Login form
+  </ng-container>
+  <ng-container class="c4">
+    Sign Up
+  </ng-container>
+</app-navigator-view>
 <!--<div>-->
   <!--<app-lorem-pixel></app-lorem-pixel>-->
 <!--<app-sync-input></app-sync-input>-->
 <!--</div>-->
 <!--компонента-->
-<div class="conteiner">
-  <div class="card">
-    <div class="card-body">
-      <app-orders-list></app-orders-list>
-    </div>
-    <div class="card-body">
-      <app-orders-form></app-orders-form>
-    </div>
-  </div>
-</div>
+<!--<div class="conteiner">-->
+  <!--<div class="card">-->
+    <!--<div class="card-body">-->
+      <!--<app-orders-list></app-orders-list>-->
+    <!--</div>-->
+    <!--<div class="card-body">-->
+      <!--<app-orders-form></app-orders-form>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 <!--<img [src]="{{urlImage}}" alt=""> &#45;&#45; альтернативный синтаксис-->
 <!--<img [src]="urlImage" alt="">-->
 <!--<button class="btn" [class.active] = "isActive" (click)="tuggleActive()">-->

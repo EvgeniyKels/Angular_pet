@@ -1,3 +1,46 @@
-<p>
-  navigator-view works!
-</p>
+<!--ul.nav>(li.nav-item>a.nav-link)*4-->
+<ul class="nav">
+  <li class="nav-item">
+    <a href="#" class="nav-link" (click)="viewMode='c1'" [class.active]="viewMode=='c1'">
+      {{tab1Name}}
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link" (click)="viewMode='c2'" [class.active]="viewMode=='c2'">
+      {{tab2Name}}
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link" (click)="viewMode='c3'" [class.active]="viewMode=='c3'">
+      {{tab3Name}}
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="#" class="nav-link" (click)="viewMode='c4'" [class.active]="viewMode=='c4'">
+      {{tab4Name}}
+    </a>
+  </li>
+</ul>
+
+<div [ngSwitch]="'viewMode'">
+  <div *ngSwitchCase="'c1'">
+    <ng-content select=".c1">
+
+    </ng-content>
+  </div>
+  <div *ngSwitchCase="'c2'">
+    <ng-content select=".c2">
+
+    </ng-content>
+  </div>
+  <div *ngSwitchCase="'c3'">
+    <ng-content select=".c3">
+
+    </ng-content>
+  </div>
+  <div *ngSwitchCase="'c4'">
+    <ng-content select=".c4">
+
+    </ng-content>
+  </div>
+</div>
