@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {OrdersService} from './ordersservice';
+import { Injectable } from '@angular/core';
+import { OrdersService } from './ordersservice';
 
-@Injectable({
+@Injectable({     // типа @Service. тогда можно не указывать в провайдах но тога в компоненте надо указывать не абстрактный класс а конечный
   providedIn: 'root'
 })
 
@@ -13,6 +13,7 @@ export class OrdersServiceMimics extends OrdersService {
   }
 
   addOrder(order): boolean {
+    // todo переделать на прием объектов
     if (!this.orders[order.email]) {
       this.orders[order.email] = order;
       return true;
@@ -20,7 +21,7 @@ export class OrdersServiceMimics extends OrdersService {
     return false;
   }
 
-  getOrders() {
+  getOrders(): string[] {
     return Object.values(this.orders);
   }
 

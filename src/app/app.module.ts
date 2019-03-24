@@ -16,7 +16,7 @@ import { TweeeetComponent } from './tweeeet/tweeeet.component';
 import { HeaderBodyComponent } from './header-body/header-body.component';
 import { CoffeeOrderComponent } from './coffee/coffee-order-form/coffee-order.component';
 import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/coffee-order-pendorder.component';
-
+// ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,7 @@ import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/c
     FormsModule// другие модули
   ],
   // то что будет в контексте
+  // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы
   providers: [
     {provide: OrdersService, useClass: OrdersServiceMimics}
   ],
