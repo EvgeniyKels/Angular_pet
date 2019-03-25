@@ -1,0 +1,8 @@
+<ul class="thumbnail_list">
+  <li class="thumbnail_item" *ngFor="let name of getNames(); index as i">
+    <a href="#" (click)="sendPic(i)">
+      <img class="thumbnail_image" src="../../../assets/pic/otter{{i+1}}.jpg">
+      <span class="thumbnail_title">{{name}}</span>
+    </a>
+  </li>
+</ul>

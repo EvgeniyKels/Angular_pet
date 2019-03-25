@@ -1,0 +1,26 @@
+.detail_image_frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 2000ms ease-in-out;
+}
+.detail_image {
+  display: block;
+  width: 80%;
+  height: 80%;
+}
+/*.hidden .detail_image_container {*/
+  /*display: none;*/
+
+/*}*/
+.detail_image_title {
+  display: block;
+  font-family: airstream, monospace;
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  text-shadow: black 2px 3px 9px;
+}
