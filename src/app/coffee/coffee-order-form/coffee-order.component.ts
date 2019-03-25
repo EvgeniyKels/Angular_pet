@@ -11,6 +11,7 @@ export class CoffeeOrderComponent {
   constructor(service: OrdersService) {
     this.service = service;
   }
+
   onSubmit(form) {
     if (form.value.email === null) {
       form.reset();

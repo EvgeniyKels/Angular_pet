@@ -3,6 +3,7 @@
   <!--<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>-->
   <!--#userForm - ссылка на объект класс ащкь групп-->
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+    {{former}}
     <div class="form-group">
       <label>Coffee time</label>
       <input type="text" class="form-control" autofocus required name="coffee" pattern="[a-zA-Z][a-z]+" ngModel>
