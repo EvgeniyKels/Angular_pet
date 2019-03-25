@@ -9,3 +9,9 @@ body {
   /*направление действия flex-а*/
   flex-direction: column;
 }
+@media all and (min-width: 700px) {
+
+  html, body {
+  height: 100%;
+  }
+}
