@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~material-icons/iconfont/material-icons.css";
+body {
+  background-color: brown;
+  margin: 33px;
+  /*варианты гибкого размещения*/
+  display: flex;
+  /*направление действия flex-а*/
+  flex-direction: column;
+}
