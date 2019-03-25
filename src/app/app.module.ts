@@ -18,6 +18,9 @@ import { CoffeeOrderComponent } from './coffee/coffee-order-form/coffee-order.co
 import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/coffee-order-pendorder.component';
 import { NavigatorViewComponent } from './navigator-view/navigator-view.component';
 import { LoginComponent } from './login/login.component';
+import { OttegramComponent } from './ottegram/ottegram/ottegram.component';
+import { OttegramListComponent } from './ottegram/ottegram-list/ottegram-list.component';
+import { OttegramMainPictureComponent } from './ottegram/ottegram-main-picture/ottegram-main-picture.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { LoginComponent } from './login/login.component';
     CoffeeOrderComponent,
     CoffeeOrderPendorderComponent,
     NavigatorViewComponent,
-    LoginComponent
+    LoginComponent,
+    OttegramComponent,
+    OttegramListComponent,
+    OttegramMainPictureComponent
   ],
   imports: [
     BrowserModule,
