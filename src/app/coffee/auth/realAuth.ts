@@ -2,11 +2,11 @@ import {AbstrAuth} from './abstrAuth';
 
 export class RealAuth extends AbstrAuth {
   private dataBase = {};
-  Logination(user): boolean {
-    return false;
+  logination(user): boolean {
+    return this.dataBase[user.username] && this.dataBase[user.username].password === user.password;
   }
 
-  Registration(user): boolean {
+  registration(user): boolean {
     if (this.dataBase[user.username]) {
       return false;
     }
