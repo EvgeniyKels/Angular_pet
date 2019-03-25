@@ -1,13 +1,16 @@
 import {AbstrAuth} from './abstrAuth';
 
 export class RealAuth extends AbstrAuth {
-  private dataBase: User[] = [];
+  private dataBase = {};
   Logination(user): boolean {
     return false;
   }
 
   Registration(user): boolean {
-    this.dataBase.push(user);
+    if (this.dataBase[user.username]) {
+      return false;
+    }
+    this.dataBase[user.username] = user;
     console.log(this.dataBase);
     return true;
   }
