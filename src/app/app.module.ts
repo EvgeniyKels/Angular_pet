@@ -17,10 +17,13 @@ import { HeaderBodyComponent } from './header-body/header-body.component';
 import { CoffeeOrderComponent } from './coffee/coffee-order-form/coffee-order.component';
 import { CoffeeOrderPendorderComponent } from './coffee/coffee-order-pendorder/coffee-order-pendorder.component';
 import { NavigatorViewComponent } from './navigator-view/navigator-view.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './coffee/auth/login/login.component';
 import { OttegramComponent } from './ottegram/ottegram/ottegram.component';
 import { OttegramListComponent } from './ottegram/ottegram-list/ottegram-list.component';
 import { OttegramMainPictureComponent } from './ottegram/ottegram-main-picture/ottegram-main-picture.component';
+import { RegistrationComponent } from './coffee/auth/registration/registration.component';
+import {AbstrAuth} from './coffee/auth/abstrAuth';
+import {RealAuth} from './coffee/auth/realAuth';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { OttegramMainPictureComponent } from './ottegram/ottegram-main-picture/o
     LoginComponent,
     OttegramComponent,
     OttegramListComponent,
-    OttegramMainPictureComponent
+    OttegramMainPictureComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { OttegramMainPictureComponent } from './ottegram/ottegram-main-picture/o
   // то что будет в контексте
   // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы
   providers: [
-    {provide: OrdersService, useClass: OrdersServiceMimics}
+    {provide: OrdersService, useClass: OrdersServiceMimics},
+    {provide: AbstrAuth, useClass: RealAuth}
   ],
   bootstrap: [AppComponent]
 })
