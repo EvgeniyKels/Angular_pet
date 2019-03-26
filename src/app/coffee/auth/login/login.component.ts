@@ -14,7 +14,7 @@ export class LoginComponent {
   }
 
   logIt(f: HTMLFormElement) {
-    console.log(this.authService.logination(f.value));
+    console.log(this.authService.login(f.value));
     f.reset();
   }
 }

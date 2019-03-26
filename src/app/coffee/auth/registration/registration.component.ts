@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstrAuth} from '../abstrAuth';
-import {User} from '../realAuth';
 
 @Component({
   selector: 'app-registration',

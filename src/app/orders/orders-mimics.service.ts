@@ -13,7 +13,6 @@ export class OrdersServiceMimics extends OrdersService {
   }
 
   addOrder(order): boolean {
-    // todo переделать на прием объектов
     if (!this.orders[order.email]) {
       this.orders[order.email] = order;
       return true;

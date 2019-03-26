@@ -3,7 +3,6 @@
   <!--<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>-->
   <!--#userForm - ссылка на объект класс ащкь групп-->
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
-    {{former}}
     <div class="form-group">
       <label>Coffee time</label>
       <input type="text" class="form-control" autofocus required name="coffee" pattern="[a-zA-Z][a-z]+" ngModel>
@@ -47,4 +46,5 @@
     <button type="submit" class="btn btn-outline-secondary">Submit</button>
     <button type="reset" class="btn btn-outline-secondary bbutt">Reset</button>
   </form>
+
 </div>
