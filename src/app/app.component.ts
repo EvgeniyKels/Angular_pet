@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {UsernamePassword} from './username-password/username-password.component';
 
 @Component({
   selector: 'app-root',
@@ -23,5 +24,9 @@ export class AppComponent {
   onChangeLikes(likes) {
     this.likefromApp = likes;
     console.log(this.likefromApp);
+  }
+
+  onSubmit(usernamePassword: UsernamePassword) {
+    console.log(`username = ${usernamePassword.username}, password = ${usernamePassword.password}`);
   }
 }

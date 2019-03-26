@@ -15,22 +15,24 @@
 <!--</div>-->
 <!--<app-login></app-login>-->
 
-<h1 class="card-header" style="text-align: center">Orders Applicatoin</h1>
-<app-navigator-view tab1Name="Add Order" tab2Name="Pending Orders" tab3Name="Login" tab4Name="Sign_UP">
-  <ng-container class="c1">
-    <app-coffee-order></app-coffee-order>
-  </ng-container>
-  <ng-container class="c2">
-    <app-coffee-order-pendorder></app-coffee-order-pendorder>
-  </ng-container>
-  <ng-container class="c3">
-    <app-login></app-login>
-  </ng-container>
-  <ng-container class="c4">
-    <app-registration></app-registration>
-  </ng-container>
-</app-navigator-view>
-<div>
+<!--<h1 class="card-header" style="text-align: center">Orders Applicatoin</h1>-->
+<!--<app-navigator-view tab1Name="Add Order" tab2Name="Pending Orders" tab3Name="Login" tab4Name="Sign_UP">-->
+  <!--<ng-container class="c1">-->
+    <!--<app-coffee-order></app-coffee-order>-->
+  <!--</ng-container>-->
+  <!--<ng-container class="c2">-->
+    <!--<app-coffee-order-pendorder></app-coffee-order-pendorder>-->
+  <!--</ng-container>-->
+  <!--<ng-container class="c3">-->
+    <!--<app-login></app-login>-->
+  <!--</ng-container>-->
+  <!--<ng-container class="c4">-->
+    <!--<app-registration></app-registration>-->
+  <!--</ng-container>-->
+<!--</app-navigator-view>-->
+<!--<div>-->
+
+<app-username-password (onSubmit)="onSubmit($event)"></app-username-password>
 
   <!--<app-lorem-pixel></app-lorem-pixel>-->
 <!--<app-sync-input></app-sync-input>-->
