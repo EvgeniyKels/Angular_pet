@@ -26,7 +26,7 @@ export class AppComponent {
     console.log(this.likefromApp);
   }
 
-  onSubmit(usernamePassword: UsernamePassword) {
-    console.log(`username = ${usernamePassword.username}, password = ${usernamePassword.password}`);
+  onSubmit(userNP: UsernamePassword) {
+    console.log(`username = ${userNP.username}, and password = ${userNP.password}`);
   }
 }

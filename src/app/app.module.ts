@@ -7,7 +7,7 @@ import { OrdersService } from './orders/ordersservice';
 import { OrdersServiceMimics } from './orders/orders-mimics.service';
 import { OrdersFormComponent } from './orders/orders-form/orders-form.component';
 import { LoremPixelComponent } from './orders/lorem/lorem-pixel/lorem-pixel.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SyncInputComponent } from './sync-input/sync-input.component';
 import { SummaryPipe } from './summary.pipe';
 import { LikeComponent } from './like/like.component';
@@ -25,6 +25,7 @@ import { RegistrationComponent } from './coffee/auth/registration/registration.c
 import {AbstrAuth} from './coffee/auth/abstrAuth';
 import {RealAuth} from './coffee/auth/realAuth';
 import { UsernamePasswordComponent } from './username-password/username-password.component';
+import { PasswordUsernameReactiveComponent } from './password-username-reactive/password-username-reactive.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -46,11 +47,14 @@ import { UsernamePasswordComponent } from './username-password/username-password
     OttegramListComponent,
     OttegramMainPictureComponent,
     RegistrationComponent,
-    UsernamePasswordComponent
+    UsernamePasswordComponent,
+    PasswordUsernameReactiveComponent
   ],
+  // другие модули
   imports: [
     BrowserModule,
-    FormsModule// другие модули
+    FormsModule,
+    ReactiveFormsModule
   ],
   // то что будет в контексте
   // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы
