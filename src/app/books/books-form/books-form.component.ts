@@ -5,7 +5,7 @@ import {Book} from '../book';
 import {BookValidators} from '../book-validators';
 import {BooksListComponent} from '../books-list/books-list.component';
 import {BooksValidators} from '../books-validator';
-import {BooksNonStaticValidators} from '../booksNonStaticValidators';
+import {BooksNonStaticValidators} from '../books-nonstatic-validators';
 
 
 @Component({
@@ -18,9 +18,9 @@ export class BooksFormComponent implements OnInit {
   // валидаторы
   form = new FormGroup({
     // статическая функция - передаем в конструктор сначала встроенный валидатор или нал потом свой
-    // id: new FormControl('', Validators.required, BooksValidators.uniqueId),
+    id: new FormControl('', Validators.required, BooksValidators.uniqueId),
     // нестатическая
-    id: new FormControl('', Validators.required, this.booksValidators),
+    // id: new FormControl('', Validators.required, this.booksValidators.uniquedId.bind(this.booksValidators)),
     title: new FormControl(),
     author: new FormControl(),
     cover: new FormControl(),
@@ -30,7 +30,7 @@ export class BooksFormComponent implements OnInit {
   // form должен видеть list
   @Input() booksList: BooksListComponent;
 
-  get id() {
+  get id() { // getter
     return this.form.get('id');
   }
   // get id() {
