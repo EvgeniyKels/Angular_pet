@@ -1,8 +1,9 @@
 <app-navigator-view tab1Name="List of books" tab2Name="Add Book">
   <ng-container class="c1">
-    <app-books-list></app-books-list>
+    <!--#list - содержит ссылку на буелист-->
+    <app-books-list #list></app-books-list>
   </ng-container>
   <ng-container class="c2">
-    <app-books-form></app-books-form>
+    <app-books-form [booksList]="list"></app-books-form>
   </ng-container>
 </app-navigator-view>

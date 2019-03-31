@@ -28,7 +28,7 @@ export class BooksFormComponent implements OnInit {
   submitForm() {
     const book = this.form.value as Book;
     this.service.addBook(book).subscribe(() => {
-      this.booksList.ngOnInit();
+      this.form.reset();
     });
   }
 }
