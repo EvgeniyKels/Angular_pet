@@ -28,12 +28,13 @@ private url = 'http://localhost:3000/books';
   }
 
   private errorHandler(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
+    if (error instanceof ErrorEvent) {
       return throwError('server unavailable');
     }
     const res = {
       message: error.error.toString().substr(0, 30),
-      status: error.status
+      status: error.status,
+      toString: () => `${res.message}${res.status}`
     };
     return throwError(res);
   }

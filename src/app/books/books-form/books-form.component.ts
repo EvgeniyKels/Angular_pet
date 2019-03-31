@@ -34,6 +34,6 @@ export class BooksFormComponent implements OnInit {
     this.service.addBook(book).subscribe(() => {
       this.booksList.ngOnInit();
       this.form.reset();
-    }, error => alert(error));
+    }, error => alert(error.message));
   }
 }
