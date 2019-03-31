@@ -26,7 +26,10 @@ import {AbstrAuth} from './coffee/auth/abstrAuth';
 import {RealAuth} from './coffee/auth/realAuth';
 import { UsernamePasswordComponent } from './username-password/username-password.component';
 import { PasswordUsernameReactiveComponent } from './password-username-reactive/password-username-reactive.component';
-import { BooksComponent } from './books/books.component';
+import { BooksListComponent } from './books/books-list/books-list.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BooksFormComponent} from './books/books-form/books-form.component';
+import {BooksNavigatorComponent} from './books/books-navigator/books-navigator.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -50,13 +53,16 @@ import { BooksComponent } from './books/books.component';
     RegistrationComponent,
     UsernamePasswordComponent,
     PasswordUsernameReactiveComponent,
-    BooksComponent
+    BooksListComponent,
+    BooksFormComponent,
+    BooksNavigatorComponent
   ],
   // другие модули
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   // то что будет в контексте
   // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы

@@ -9,8 +9,8 @@ import {BooksService} from '../books.service';
   styleUrls: ['./books-list.component.css']
 })
 export class BooksListComponent implements OnInit {
- books$: Observable<Book[]>
-  constructor(private service: BooksService) { }
+ books$: Observable<Book[]>;
+  constructor(private service: BooksService) {}
 
   ngOnInit() {
     this.books$ = this.service.getBooks();
