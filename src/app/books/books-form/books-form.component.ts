@@ -30,6 +30,7 @@ export class BooksFormComponent implements OnInit {
     const book = this.form.value as Book;
     // если мы делаем какой-то обработчик ошибок -> мы должны работать с PIPE до сабскрайбинга
     // на сабскрайбинге мы поймать эксепшн уже не сможем поэтому должны 'врезаться' перед ним
+    // BooksService смотри в этом TS
     this.service.addBook(book).subscribe(() => {
       this.booksList.ngOnInit();
       this.form.reset();
