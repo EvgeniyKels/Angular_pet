@@ -1,7 +1,5 @@
 import {AbstractControl, ValidationErrors} from '@angular/forms';
 import {BooksService} from './books.service';
-import {promise} from 'selenium-webdriver';
-import Promise = promise.Promise;
 
 export class BooksValidators {
   static booksService: BooksService;
