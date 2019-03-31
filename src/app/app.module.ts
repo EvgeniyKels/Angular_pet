@@ -26,6 +26,7 @@ import {AbstrAuth} from './coffee/auth/abstrAuth';
 import {RealAuth} from './coffee/auth/realAuth';
 import { UsernamePasswordComponent } from './username-password/username-password.component';
 import { PasswordUsernameReactiveComponent } from './password-username-reactive/password-username-reactive.component';
+import { BooksComponent } from './books/books.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PasswordUsernameReactiveComponent } from './password-username-reactive/
     OttegramMainPictureComponent,
     RegistrationComponent,
     UsernamePasswordComponent,
-    PasswordUsernameReactiveComponent
+    PasswordUsernameReactiveComponent,
+    BooksComponent
   ],
   // другие модули
   imports: [

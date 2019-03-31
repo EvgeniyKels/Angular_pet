@@ -1,0 +1,12 @@
+<app-header-body>
+  <ng-container class="header">
+    <h3>Books</h3>
+  </ng-container>
+  <ng-container class="body">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let book of books$|async">
+        {{toString(book)}} <button class="btn btn-outline-secondary" (click)="remove(book)">Remove</button>
+      </li>
+    </ul>
+  </ng-container>
+</app-header-body>

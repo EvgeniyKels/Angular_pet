@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {PasswordValidator} from '../PasswordValidator';
 
 @Component({
   selector: 'app-password-username-reactive',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class PasswordUsernameReactiveComponent implements OnInit {
   form = new FormGroup({
     username: new FormControl(),
-    password: new FormControl(),
+    password: new FormControl('', [PasswordValidator.passwordRiles]),
   });
   @Output() data = new EventEmitter();
 
@@ -31,6 +32,6 @@ export class PasswordUsernameReactiveComponent implements OnInit {
 
   submit() {
     this.data.emit(this.form.value);
-    this.form.reset();
+    // this.form.reset();
   }
 }
