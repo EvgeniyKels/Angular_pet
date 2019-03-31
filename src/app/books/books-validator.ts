@@ -1,11 +1,12 @@
 import {AbstractControl, ValidationErrors} from '@angular/forms';
-import {Promise} from 'q';
 import {BooksService} from './books.service';
+import {promise} from 'selenium-webdriver';
+import Promise = promise.Promise;
 
 export class BooksValidators {
   static booksService: BooksService;
-  static uniqueId(control: AbstractControl): Promise<ValidationErrors|null> {
-    const id = control.value;
+  static uniqueId(control: AbstractControl): Promise<ValidationErrors | null> {
+    const id = control.value as number;
     return new Promise(resolve => {
       BooksValidators.booksService.getBook(id).subscribe(() => resolve({unique: true}), () => resolve(null));
     });

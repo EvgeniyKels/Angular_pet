@@ -27,6 +27,7 @@ export class BooksFormComponent implements OnInit {
   // }
 
   ngOnInit() {
+    BooksValidators.booksService = this.service;
   }
 // два типа ошибок экспектед и анэкспектед
 // как можно больше вещей надо проверять еще до сабмита
