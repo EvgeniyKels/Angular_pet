@@ -17,7 +17,6 @@ export class BooksFormComponent implements OnInit {
 
   constructor(private service: BooksService) {
   }
-
   // get id() {
   //   return this.form.get('id');
   // }

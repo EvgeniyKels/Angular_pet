@@ -42,5 +42,6 @@ export class BooksListComponent implements OnInit {
     this.service.removeBook(book.id).subscribe(() => this.getBooks());
     // ремув вернет обсерабле это своего рода функция субскрайб
     // инициализация полей не в конструкторе а тут по иниту
+    // три функциональности в subscribe
   }
 }
