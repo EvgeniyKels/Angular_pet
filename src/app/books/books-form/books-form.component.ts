@@ -6,6 +6,7 @@ import {BookValidators} from '../book-validators';
 import {BooksListComponent} from '../books-list/books-list.component';
 import {BooksValidators} from '../books-validator';
 import {BooksNonStaticValidators} from '../books-nonstatic-validators';
+import {bind} from '@angular/core/src/render3';
 
 
 @Component({
