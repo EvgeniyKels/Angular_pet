@@ -8,6 +8,7 @@ import {BooksService} from '../books.service';
   templateUrl: './books-list.component.html',
   styleUrls: ['./books-list.component.css']
 })
+
 export class BooksListComponent implements OnInit {
  books$: Observable<Book[]>;
   constructor(private service: BooksService) {}
@@ -16,7 +17,7 @@ export class BooksListComponent implements OnInit {
     this.books$ = this.service.getBooks();
   }
   toString(book: Book): string {
-    return `${book.id} ${book.title} ${book.author} ${book.feedback} ${book.cover}`
+    return `${book.id} ${book.title} ${book.author} ${book.feedback} ${book.cover}`;
   }
 
   remove(book: Book) {
