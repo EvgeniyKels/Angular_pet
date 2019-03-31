@@ -10,6 +10,9 @@ import {BooksValidators} from '../books-validator';
   selector: 'app-books-form', templateUrl: './books-form.component.html', styleUrls: ['./books-form.component.css']
 })
 export class BooksFormComponent implements OnInit {
+
+  constructor(private service: BooksService) {
+  }
   form = new FormGroup({
     id: new FormControl('', Validators.required, BooksValidators.uniqueId),
     title: new FormControl(),
@@ -17,10 +20,12 @@ export class BooksFormComponent implements OnInit {
     cover: new FormControl(),
     feedback: new FormControl()
   });
+
   // form должен видеть list
   @Input() booksList: BooksListComponent;
 
-  constructor(private service: BooksService) {
+  get id() {
+    return this.form.get('id');
   }
   // get id() {
   //   return this.form.get('id');
