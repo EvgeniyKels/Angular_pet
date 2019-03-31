@@ -13,17 +13,18 @@ private url = 'http://localhost:3000/books';
   constructor(private http: HttpClient ) {}
   // все современные хттп клиенты возвращают обсерабле
   addBook(book: Book): Observable<Book> { // добавить книгу
+    // PIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
     return this.http.post<Book>(this.url, book).pipe(catchError(this.errorHandler));
   }
   getBooks(criteria?: string): Observable<Book[]> {
     const additional = criteria ? criteria : ''; // критерий поиска
-    return this.http.get<Book[]>(this.url + additional);
+    return this.http.get<Book[]>(this.url + additional).pipe(catchError(this.errorHandler));
   }
   getBook(id: number): Observable<Book> {
-    return this.http.get<Book> (`${this.url}/${id}`); // могут быть экскепшены
+    return this.http.get<Book> (`${this.url}/${id}`).pipe(catchError(this.errorHandler)); // могут быть экскепшены
   }
   removeBook(id: number): Observable<object> {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete(`${this.url}/${id}`).pipe(catchError(this.errorHandler));
   }
 
   private errorHandler(error: HttpErrorResponse) {
