@@ -24,11 +24,13 @@ export class BooksFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+// два типа ошибок экспектед и анэкспектед
+// как можно больше вещей надо проверять еще до сабмита
   submitForm() {
     const book = this.form.value as Book;
     this.service.addBook(book).subscribe(() => {
-      this.form.reset();
-    });
+      this.booksList.ngOnInit();
+    }, (error) => alert(error.message));
+    this.form.reset();
   }
 }
