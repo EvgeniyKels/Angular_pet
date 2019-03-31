@@ -10,7 +10,11 @@ import {BooksService} from '../books.service';
 })
 
 export class BooksListComponent implements OnInit {
-  //
+  // в конце переменной $ так как абсерабле. Абсерабле - частный случай стрима
+  // Хттп модуль - рест апи и все его методы возвращают абсерабле
+  // сабскрайб
+  // OnInit - когда все выполняется и строится готоыфйй компонент выполняется метод он инит
+  // жизненный цикл компонента
   books$: Observable<Book[]>;
 
   constructor(private service: BooksService) {
