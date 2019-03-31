@@ -26,7 +26,12 @@ export class BooksListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.books$ = this.service.getBooks();
+    console.log('onInitCall');
+    this.getBooks();
+  }
+
+  private getBooks() {
+    this.books$ = this.service.getBooks(); // тут сабскрайбинг делает пайп асинк
   }
 
   toString(book: Book): string {
@@ -34,6 +39,8 @@ export class BooksListComponent implements OnInit {
   }
 
   remove(book: Book) {
-    this.service.removeBook(book.id).subscribe(() => this.ngOnInit());
+    this.service.removeBook(book.id).subscribe(() => this.getBooks());
+    // ремув вернет обсерабле это своего рода функция субскрайб
+    // инициализация полей не в конструкторе а тут по иниту
   }
 }
