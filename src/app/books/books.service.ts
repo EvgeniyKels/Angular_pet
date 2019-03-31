@@ -27,8 +27,8 @@ private url = 'http://localhost:3000/books';
     return this.http.delete(`${this.url}/${id}`).pipe(catchError(this.errorHandler));
   }
 
-  private errorHandler(error: HttpErrorResponse) {
-    if (error instanceof ErrorEvent) {
+  private errorHandler(error: HttpErrorResponse) { // обработчик ошибок
+    if (!error.status) {
       return throwError('server unavailable');
     }
     const res = {
