@@ -7,8 +7,13 @@
           id
         </label>
           <input type="number" class="form-control" id="id" formControlName="id">
-        <div class="alert alert-danger" *ngIf="id.invalid && id.touched && id.errors.unique">
-          Should be unique
+        <div class="alert alert-danger" *ngIf="id.invalid && id.touched">
+          <div *ngIf="id.errors.requiered">
+            id is requiered
+          </div>
+          <div *ngIf="id.errors.unique">
+            id should be unique
+          </div>
         </div>
       </div>
       <div class="form-group"><label for="title">title</label>

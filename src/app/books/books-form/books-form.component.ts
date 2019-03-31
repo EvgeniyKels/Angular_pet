@@ -13,7 +13,9 @@ export class BooksFormComponent implements OnInit {
 
   constructor(private service: BooksService) {
   }
+  // валидаторы
   form = new FormGroup({
+    // передаем в конструктор сначала встроенный валидатор или нал потом свой
     id: new FormControl('', Validators.required, BooksValidators.uniqueId),
     title: new FormControl(),
     author: new FormControl(),
