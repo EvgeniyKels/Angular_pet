@@ -25,11 +25,14 @@ export class BooksFormComponent implements OnInit {
   }
 // два типа ошибок экспектед и анэкспектед
 // как можно больше вещей надо проверять еще до сабмита
+// вместо эрора можно передать все что угодно, не только вывод эрора
   submitForm() {
     const book = this.form.value as Book;
+    // если мы делаем какой-то обработчик ошибок -> мы должны работать с PIPE до сабскрайбинга
+    // на сабскрайбинге мы поймать эксепшн уже не сможем поэтому должны 'врезаться' перед ним
     this.service.addBook(book).subscribe(() => {
       this.booksList.ngOnInit();
       this.form.reset();
-    });
+    }, error => alert(error));
   }
 }

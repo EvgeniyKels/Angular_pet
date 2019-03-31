@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 import {Book} from './book';
+import {Error} from 'tslint/lib/error';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,16 @@ private url = 'http://localhost:3000/books';
   }
   removeBook(id: number): Observable<object> {
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  private errorHandler(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      return throwError('server unavailable');
+    }
+    const res = {
+      message: error.error.toString().substr(0, 30),
+      status: error.status
+    };
+    return throwError(res);
   }
 }
