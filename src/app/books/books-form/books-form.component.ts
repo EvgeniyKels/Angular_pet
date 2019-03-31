@@ -5,12 +5,14 @@ import {Book} from '../book';
 import {BookValidators} from '../book-validators';
 import {BooksListComponent} from '../books-list/books-list.component';
 import {BooksValidators} from '../books-validator';
+import {BooksNonStaticValidators} from '../booksNonStaticValidators';
+
 
 @Component({
   selector: 'app-books-form', templateUrl: './books-form.component.html', styleUrls: ['./books-form.component.css']
 })
 export class BooksFormComponent implements OnInit {
-
+  booksValidators = new BooksNonStaticValidators(this.service);
   constructor(private service: BooksService) {
   }
   // валидаторы
@@ -18,7 +20,7 @@ export class BooksFormComponent implements OnInit {
     // статическая функция - передаем в конструктор сначала встроенный валидатор или нал потом свой
     // id: new FormControl('', Validators.required, BooksValidators.uniqueId),
     // нестатическая
-    id: new FormControl('', Validators.required, BooksValidators.uniqueId),
+    id: new FormControl('', Validators.required, this.booksValidators),
     title: new FormControl(),
     author: new FormControl(),
     cover: new FormControl(),
@@ -36,7 +38,7 @@ export class BooksFormComponent implements OnInit {
   // }
 
   ngOnInit() {
-    BooksValidators.booksService = this.service;
+    // BooksValidators.booksService = this.service;
   }
 // два типа ошибок экспектед и анэкспектед
 // как можно больше вещей надо проверять еще до сабмита
