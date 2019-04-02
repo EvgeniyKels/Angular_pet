@@ -1,10 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {BooksService} from '../books.service';
-import {Book} from '../book';
-import {BooksListComponent} from '../books-list/books-list.component';
-import {BooksValidators} from '../books-validator';
-import {BooksNonStaticValidators} from '../books-nonstatic-validators';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BooksService } from '../books.service';
+import { Book } from '../book';
+import { BooksListComponent } from '../books-list/books-list.component';
+import { BooksValidators } from '../books-validator';
+import { BooksNonStaticValidators } from '../books-nonstatic-validators';
 
 @Component({
   selector: 'app-books-form', templateUrl: './books-form.component.html', styleUrls: ['./books-form.component.css']

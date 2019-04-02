@@ -31,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BooksFormComponent} from './books/books-form/books-form.component';
 import {BooksNavigatorComponent} from './books/books-navigator/books-navigator.component';
 import { VideoPlayersComponent } from './video-players/video-players.component';
+import { NavigatorComponent } from './books/navigator/navigator.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { VideoPlayersComponent } from './video-players/video-players.component';
     BooksListComponent,
     BooksFormComponent,
     BooksNavigatorComponent,
-    VideoPlayersComponent
+    VideoPlayersComponent,
+    NavigatorComponent
   ],
   // другие модули
   imports: [
