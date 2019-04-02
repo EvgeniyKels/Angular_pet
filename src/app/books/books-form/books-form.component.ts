@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BooksService} from '../books.service';
 import {Book} from '../book';
-import {BookValidators} from '../book-validators';
 import {BooksListComponent} from '../books-list/books-list.component';
 import {BooksValidators} from '../books-validator';
 import {BooksNonStaticValidators} from '../books-nonstatic-validators';
