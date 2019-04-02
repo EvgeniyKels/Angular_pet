@@ -11,8 +11,7 @@ export class BookValidators {
     try {
       return new Promise(resolve => {
         const id = formControl.value as number;
-        BookValidators.service.getBook(id).subscribe(() =>
-          resolve({unique: true}), error => resolve(null));
+        BookValidators.service.getBook(id).subscribe(() => resolve({unique: true}), error => resolve(null));
       });
     } catch (e) {
     }

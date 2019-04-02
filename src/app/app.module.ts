@@ -32,6 +32,9 @@ import {BooksFormComponent} from './books/books-form/books-form.component';
 import {BooksNavigatorComponent} from './books/books-navigator/books-navigator.component';
 import { VideoPlayersComponent } from './video-players/video-players.component';
 import { NavigatorComponent } from './books/navigator/navigator.component';
+import {RouterModule} from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { BookComponent } from './books/book/book.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -59,14 +62,23 @@ import { NavigatorComponent } from './books/navigator/navigator.component';
     BooksFormComponent,
     BooksNavigatorComponent,
     VideoPlayersComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    NotFoundComponent,
+    BookComponent
   ],
   // другие модули
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // вместе с раутингами имполртируем роутер модуль
+    RouterModule.forRoot([
+      {path: 'books', component: BooksListComponent},
+      {path: 'addbook', component: BooksFormComponent},
+      // default routing
+      {path: '**', component: NotFoundComponent}
+    ])
   ],
   // то что будет в контексте
   // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы

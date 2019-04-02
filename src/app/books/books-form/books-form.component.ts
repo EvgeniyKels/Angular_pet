@@ -47,7 +47,9 @@ export class BooksFormComponent implements OnInit {
     // на сабскрайбинге мы поймать эксепшн уже не сможем поэтому должны 'врезаться' перед ним
     // BooksService смотри в этом TS
     this.service.addBook(book).subscribe(() => {
-      this.booksList.ngOnInit();
+      if (this.booksList) {
+        this.booksList.ngOnInit();
+      }
       this.form.reset();
     }, error => alert(error.message));
   }
