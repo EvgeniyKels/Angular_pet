@@ -1,3 +1,29 @@
-<p>
-  {{book$|async}}
-</p>
+<!--<p *ngIf="book$|async as book">-->
+<!--&lt;!&ndash;асинк выполняет функциональность сабскрайбинга и ансабскрайбинга&ndash;&gt;-->
+<!--&lt;!&ndash;{{(book$|async).title}} {{(book$|async).author}}&ndash;&gt;-->
+<!--{{book.title}} {{book.author}}-->
+<!--</p>-->
+
+<div class="container" *ngIf="book$|async as book">
+  <div class="card">
+    <div class="card-header">
+      <h1>Book Data</h1>
+    </div>
+    <div class="card-body">
+      <label>Title: </label>
+      <span>{{book.title}}</span>
+    </div>
+    <div class="card-body">
+      <label>Author: </label>
+      <span>{{book.author}}</span>
+    </div>
+    <div class="card-body">
+      <label>Email: </label>
+      <span>{{book.email}}</span>
+    </div>
+    <div class="card-body">
+      <label>Cover: </label>
+      <span>{{book.cover}}</span>
+    </div>
+  </div>
+</div>

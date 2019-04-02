@@ -74,6 +74,7 @@ import { BookComponent } from './books/book/book.component';
     HttpClientModule,
     // вместе с раутингами имполртируем роутер модуль
     RouterModule.forRoot([
+      {path: 'books/:id', component: BookComponent},
       {path: 'books', component: BooksListComponent},
       {path: 'addbook', component: BooksFormComponent},
       // default routing

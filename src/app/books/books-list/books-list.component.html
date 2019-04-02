@@ -5,7 +5,13 @@
   <ng-container class="body">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let book of books$|async">
-        {{toString(book)}} <button class="btn btn-outline-secondary" (click)="remove(book)">Remove</button>
+        <a [routerLink]="['/books', book.id]">
+          {{book.id}}
+        </a>
+        <span>
+          {{book.title}}
+        </span>
+        <button class="btn btn-outline-secondary" (click)="remove(book)">Remove</button>
       </li>
     </ul>
   </ng-container>

@@ -2,3 +2,10 @@
   height: 500px;
   overflow-y: auto;
 }
+span {
+  padding-left: 15px;
+}
+
+button {
+  float: right;
+}

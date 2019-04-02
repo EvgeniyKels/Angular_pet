@@ -1,39 +1,25 @@
 {
   "books": [
     {
-      "id": 50505,
-      "title": "ewqeqweqw",
-      "author": "fdsfds",
-      "cover": "rewrwe",
-      "feedback": "uiiui@re.cd"
+      "id": 1,
+      "title": "A",
+      "author": "a",
+      "cover": "111",
+      "feedback": "111"
     },
     {
-      "id": 78,
-      "title": "ewqeqweqw",
+      "id": 2,
+      "title": "B",
       "author": "Gogol",
-      "cover": "xcvb",
-      "feedback": "uiiui@re.cd"
+      "cover": "222",
+      "feedback": "222"
     },
     {
-      "id": 12,
-      "title": "ewqeqweqw",
-      "author": "fdsfds",
-      "cover": "www",
-      "feedback": "uiiui@re.cd"
-    },
-    {
-      "id": 123,
-      "title": "ewqeqweqw",
+      "id": 3,
+      "title": "C",
       "author": "Gogol",
-      "cover": "da",
-      "feedback": "uiiui@re.cd"
-    },
-    {
-      "id": 10,
-      "title": "ewqeqweqw",
-      "author": "Gogol",
-      "cover": "1234",
-      "feedback": "uiiui@re.cd"
+      "cover": "333",
+      "feedback": "333"
     }
   ]
 }
