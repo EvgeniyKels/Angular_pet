@@ -30,6 +30,7 @@ import { BooksListComponent } from './books/books-list/books-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BooksFormComponent} from './books/books-form/books-form.component';
 import {BooksNavigatorComponent} from './books/books-navigator/books-navigator.component';
+import { VideoPlayersComponent } from './video-players/video-players.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {BooksNavigatorComponent} from './books/books-navigator/books-navigator.c
     PasswordUsernameReactiveComponent,
     BooksListComponent,
     BooksFormComponent,
-    BooksNavigatorComponent
+    BooksNavigatorComponent,
+    VideoPlayersComponent
   ],
   // другие модули
   imports: [
