@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OrdersService} from '../../orders/ordersservice';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-input-reactive-form',
@@ -10,20 +10,30 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class InputReactiveFormComponent implements OnInit {
   sizes = ['Short', 'Tall', 'Grate'];
   flavours = ['None', 'Caramel', 'Vanilla', 'Mocha', 'Cinnamon'];
+  bannedUserNames = ['Iluha', 'Roma', 'Vova']
 
   service: OrdersService;
 
   constructor(service: OrdersService) {
     this.service = service;
   }
+
   signupForm: FormGroup;
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
-      coffee: new FormControl(null, Validators.required),
-      email: new FormControl(null),
-      size: new FormControl('Tall') // todo
+      userData: new FormGroup({
+        coffee: new FormControl(null, Validators.required),
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        size: new FormControl('Tall'), // todo
+      }), flavour: new FormControl(null), strength: new FormControl(50),
+      hobbyes: new FormArray([])
     });
+  }
+
+  onAddHobby() {
+    const formControl = new FormControl(null, Validators.required);
+    (this.signupForm.get('hobbyes') as FormArray).push(formControl);
   }
 
   onSubmit() {
@@ -35,10 +45,6 @@ export class InputReactiveFormComponent implements OnInit {
     // this.service.addOrder(form.value);
     // form.reset();
   }
-
-
-
-
 
 
 }
