@@ -1,0 +1,41 @@
+<div class="card-body">
+  <!--если то ангуляр поймето, что * - структурная директива, # - атрибутная директива-->
+  <!--<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>-->
+  <!--#userForm - ссылка на объект класс ащкь групп-->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Coffee time</label>
+      <input type="text"
+             class="form-control"
+             autofocus
+             name="coffee"
+             pattern="[a-zA-Z][a-z]+"
+             formControlName="coffee">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" formControlName="email">
+    </div>
+
+    <div class="form-check" *ngFor="let size of sizes">
+      <label class="form-check-label">
+        <input type="radio" [value]="size" formControlName="size">
+        {{size}}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="form-check-label"></label>
+      <select class="form-control" name="flavour">
+        <option *ngFor="let flavour of flavours" value="{{flavour}}">{{flavour}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Caffeine Strength</label>
+      <input type="range" class="custom-range" name="strength" value="50">
+    </div>
+    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+    <button type="reset" class="btn btn-outline-secondary bbutt">Reset</button>
+  </form>
+
+</div>
