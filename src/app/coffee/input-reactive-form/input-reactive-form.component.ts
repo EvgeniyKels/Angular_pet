@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {OrdersService} from '../../orders/ordersservice';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-input-reactive-form',
@@ -20,7 +20,7 @@ export class InputReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
-      coffee: new FormControl(null),
+      coffee: new FormControl(null, Validators.required),
       email: new FormControl(null),
       size: new FormControl('Tall') // todo
     });
