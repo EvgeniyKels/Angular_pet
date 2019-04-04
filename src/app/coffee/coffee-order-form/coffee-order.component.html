@@ -2,15 +2,23 @@
   <!--если то ангуляр поймето, что * - структурная директива, # - атрибутная директива-->
   <!--<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>-->
   <!--#userForm - ссылка на объект класс ащкь групп-->
-  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="form-group">
       <label>Coffee time</label>
-      <input type="text" class="form-control" autofocus required name="coffee" pattern="[a-zA-Z][a-z]+" ngModel #coffe="ngModel">
-      <span class="help-block">Please enter valid something</span>
+      <input type="text"
+             class="form-control"
+             autofocus
+             required
+             name="coffee"
+             pattern="[a-zA-Z][a-z]+"
+             [ngModel]="defaultCoffee"
+             #coffe="ngModel">
+      <span class="help-block" *ngIf="!coffe.valid && coffe.touched">Please enter valid something</span>
     </div>
     <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control" name="email" ngModel required>
+      <input type="email" class="form-control" name="email" ngModel required #email="ngModel">
+      <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid something</span>
     </div>
     <div class="form-check">
       <label class="form-check-label">

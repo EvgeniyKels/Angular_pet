@@ -8,6 +8,7 @@ import {OrdersService} from '../../orders/ordersservice';
 })
 export class CoffeeOrderComponent {
   service: OrdersService;
+  defaultCoffee = 'wonna something?';
   constructor(service: OrdersService) {
     this.service = service;
   }

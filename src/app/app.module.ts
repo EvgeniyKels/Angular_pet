@@ -35,6 +35,7 @@ import { NavigatorComponent } from './books/navigator/navigator.component';
 import {RouterModule} from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BookComponent } from './books/book/book.component';
+import { InputReactiveFormComponent } from './coffee/input-reactive-form/input-reactive-form.component';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { BookComponent } from './books/book/book.component';
     VideoPlayersComponent,
     NavigatorComponent,
     NotFoundComponent,
-    BookComponent
+    BookComponent,
+    InputReactiveFormComponent
   ],
   // другие модули
   imports: [
