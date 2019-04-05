@@ -36,6 +36,8 @@ import {RouterModule} from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BookComponent } from './books/book/book.component';
 import { InputReactiveFormComponent } from './coffee/input-reactive-form/input-reactive-form.component';
+import { HttprequestComponent } from './httprequest/httprequest.component';
+import {ServerService} from './httprequest/serv/server.service';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { InputReactiveFormComponent } from './coffee/input-reactive-form/input-r
     NavigatorComponent,
     NotFoundComponent,
     BookComponent,
-    InputReactiveFormComponent
+    InputReactiveFormComponent,
+    HttprequestComponent
   ],
   // другие модули
   imports: [
@@ -87,7 +90,8 @@ import { InputReactiveFormComponent } from './coffee/input-reactive-form/input-r
   // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы
   providers: [
     {provide: OrdersService, useClass: OrdersServiceMimics},
-    {provide: AbstrAuth, useClass: RealAuth}
+    {provide: AbstrAuth, useClass: RealAuth},
+    {provide: ServerService, useClass: ServerService}
   ],
   bootstrap: [AppComponent]
 })

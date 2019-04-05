@@ -10,7 +10,7 @@ import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 export class InputReactiveFormComponent implements OnInit {
   sizes = ['Short', 'Tall', 'Grate'];
   flavours = ['None', 'Caramel', 'Vanilla', 'Mocha', 'Cinnamon'];
-  bannedUserNames = ['Iluha', 'Roma', 'Vova']
+  bannedUserNames = ['Iluha', 'Roma', 'Vova'];
 
   service: OrdersService;
 
@@ -20,10 +20,17 @@ export class InputReactiveFormComponent implements OnInit {
 
   signupForm: FormGroup;
 
+  bannedNames(control: FormControl): {[s: string]: boolean} {
+    if (this.bannedUserNames.indexOf(control.value) !== -1) {
+      return {'+++++': true};
+    }
+    return null;
+  }
+
   ngOnInit(): void {
     this.signupForm = new FormGroup({
       userData: new FormGroup({
-        coffee: new FormControl(null, Validators.required),
+        coffee: new FormControl(null, [Validators.required, this.bannedNames.bind(this)]),
         email: new FormControl(null, [Validators.required, Validators.email]),
         size: new FormControl('Tall'), // todo
       }), flavour: new FormControl(null), strength: new FormControl(50),
