@@ -1,0 +1,13 @@
+<p>
+
+</p>
+<div class="div">
+  <input type="text">
+  <button (click)="onAddServer()">Add Server</button>
+
+  <p *ngFor="let server of servers" style="margin-top: 25px; border: solid 1px lightgray; border-radius: 25px">{{ server.name }} (ID: {{ server.id }})</p>
+  <br>
+  <br>
+  <button class="btn btn-danger" (click)="onSave()">SaveService</button>
+</div>
+
