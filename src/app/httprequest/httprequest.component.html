@@ -1,13 +1,13 @@
-<p>
-
-</p>
 <div class="div">
-  <input type="text">
-  <button (click)="onAddServer()">Add Server</button>
-
+  <input type="text" #name>
+  <button (click)="onAddServer(name)">Add Server</button>
+  <h4>{{ Test | async}}</h4>
   <p *ngFor="let server of servers" style="margin-top: 25px; border: solid 1px lightgray; border-radius: 25px">{{ server.name }} (ID: {{ server.id }})</p>
   <br>
   <br>
-  <button class="btn btn-danger" (click)="onSave()">SaveService</button>
+  <!--<button class="btn btn-danger" (click)="onSave()">SaveService</button>-->
+  <button class="btn btn-danger" (click)="onGet()" style="margin-left: 10px">GetService</button>
+  <button class="btn btn-danger" (click)="onUpdate()" style="margin-left: 10px">UpdateService</button>
 </div>
 
+<!--https://my-awesome-project-9e3ca.firebaseio.com/data/Test-->

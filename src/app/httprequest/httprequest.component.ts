@@ -6,8 +6,10 @@ import {ServerService} from './serv/server.service';
   templateUrl: './httprequest.component.html',
   styleUrls: ['./httprequest.component.css']
 })
+
+
 export class HttprequestComponent {
-  servers = [{
+    servers = [{
     name: 'test',
     capacity: 10,
     id: this.generateId()
@@ -18,9 +20,14 @@ export class HttprequestComponent {
       id: this.generateId()
     },
   ];
-
-  onAddServer() {
-    console.log('d');
+  Test = this.serverService.getAppName();
+  onAddServer(name) {
+    this.servers.push({
+      name: name.value,
+      capacity: 100,
+      id: this.generateId()
+    });
+    name.value = '';
   }
 
   private generateId() {
@@ -29,9 +36,30 @@ export class HttprequestComponent {
 
   constructor(private serverService: ServerService) { }
   onSave() {
+    // todo почему невозвращает весь респонс
     this.serverService.storeService(this.servers).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
   }
+
+  onGet() {
+    this.serverService.getServers().subscribe(
+      (response) => response,
+      (error) => console.log(error)
+    );
+  }
+
+  onUpdate() {
+    this.serverService.storePutService(this.servers).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
+  }
+}
+
+export interface Serverok {
+  name: string;
+  capacity: number;
+  id: number;
 }

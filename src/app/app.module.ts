@@ -32,16 +32,37 @@ import {BooksFormComponent} from './books/books-form/books-form.component';
 import {BooksNavigatorComponent} from './books/books-navigator/books-navigator.component';
 import { VideoPlayersComponent } from './video-players/video-players.component';
 import { NavigatorComponent } from './books/navigator/navigator.component';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BookComponent } from './books/book/book.component';
 import { InputReactiveFormComponent } from './coffee/input-reactive-form/input-reactive-form.component';
 import { HttprequestComponent } from './httprequest/httprequest.component';
 import {ServerService} from './httprequest/serv/server.service';
+import {HomeComponent} from './routing-from-udemi/home/home.component';
+import {UserComponent} from './routing-from-udemi/users/user/user.component';
+import {EditServerComponent} from './routing-from-udemi/servers/edit-server/edit-server.component';
+import {ServerComponent} from './routing-from-udemi/servers/server/server.component';
+import {ServersComponent} from './routing-from-udemi/servers/servers.component';
+import {UsersComponent} from './routing-from-udemi/users/users.component';
+import {ServersService} from './routing-from-udemi/servers/servers.service';
 // ЭТОТ ФАЙЛ _ аппликационный контекст
+const appRouter: Routes = [
+  { path: '', component: HomeComponent }, /*localhost:4200/users*/
+  { path: 'users', component: UsersComponent },
+  { path: 'servers', component: ServersComponent },
+  // servers compinent, line 14
+  { path: 'servers/servers', component: BooksFormComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent,
     OrdersListComponent,
     OrdersFormComponent,
     LoremPixelComponent,
@@ -77,21 +98,24 @@ import {ServerService} from './httprequest/serv/server.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // вместе с раутингами имполртируем роутер модуль
-    RouterModule.forRoot([
-      {path: 'books/:id', component: BookComponent},
-      {path: 'books', component: BooksListComponent},
-      {path: 'addbook', component: BooksFormComponent},
-      // default routing
-      {path: '**', component: NotFoundComponent}
-    ])
+    // роуты, версия с UDEMI
+    RouterModule.forRoot(appRouter)
+    // вместе с раутингами имполртируем роутер модуль Версия Гранулятора
+    // RouterModule.forRoot([
+    //   {path: 'books/:id', component: BookComponent},
+    //   {path: 'books', component: BooksListComponent},
+    //   {path: 'addbook', component: BooksFormComponent},
+    //   // default routing
+    //   {path: '**', component: NotFoundComponent}
+    // ])
   ],
   // то что будет в контексте
   // а провайдерс сначала абстрактный класс, потом класс реализации Дает возможность заменять рабочие классы
   providers: [
     {provide: OrdersService, useClass: OrdersServiceMimics},
     {provide: AbstrAuth, useClass: RealAuth},
-    {provide: ServerService, useClass: ServerService}
+    {provide: ServerService, useClass: ServerService},
+    {provide: ServersService, useClass: ServersService}
   ],
   bootstrap: [AppComponent]
 })
